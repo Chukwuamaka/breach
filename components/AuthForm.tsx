@@ -3,7 +3,7 @@ import CustomInput from "./CustomInput";
 import CustomLink from "./CustomLink";
 import useAuthForm from "@/hooks/useAuthForm";
 
-export default function AuthForm({ purpose = "join" }: { purpose?: 'login' | 'join' }) {
+export default function AuthForm({ purpose = "signup" }: { purpose?: 'login' | 'signup' }) {
   const { loading, formData, updateFormData, validateFormData, handleSubmit } = useAuthForm();
 
   return (
@@ -21,11 +21,11 @@ export default function AuthForm({ purpose = "join" }: { purpose?: 'login' | 'jo
           Continue
         </Button>
         <Text textStyle='sm_text' color='brand.grey.900'>
-          {purpose === "join" ? "Already have an account" : "Don't have an account"}{'? '} 
-          <CustomLink href={`/${purpose === "join" ? "login" : "join"}`}
+          {purpose === "signup" ? "Already have an account" : "Don't have an account"}{'? '} 
+          <CustomLink href={`/${purpose === "signup" ? "login" : "signup"}`}
             textDecor='underline' textStyle='sm_text' customStyles={{fontSize: '0.875rem'}}
           >
-            {purpose === "join" ? "Log in" : "Sign up"}
+            {purpose === "signup" ? "Log in" : "Sign up"}
           </CustomLink>
         </Text>
       </VStack>

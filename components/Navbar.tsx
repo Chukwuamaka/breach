@@ -17,7 +17,7 @@ export default function Navbar({ withNavbarCTAs = false }: { withNavbarCTAs?: bo
             <CustomLink href="/login" variant="outline" className={space_grotesk.className}>
               Log in
             </CustomLink>
-            <CustomLink href="/join" variant="solid">Join Breach</CustomLink>
+            <CustomLink href="/signup" variant="solid">Join Breach</CustomLink>
           </HStack>
         }
       </Flex>
