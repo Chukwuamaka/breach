@@ -2,10 +2,10 @@ const inputTheme = {
   baseStyle: {
     field: {
       _placeholder: {
-        color: 'brand.gray.400',
+        color: 'brand.grey.400',
       },
       letterSpacing: -0.16,
-      color: 'brand.gray.900',
+      color: 'brand.grey.900',
       fontWeight: 'normal'
     }
   },
@@ -13,14 +13,14 @@ const inputTheme = {
     outline: {
       field: {
         border: '1px solid',
-        borderColor: 'brand.gray.200',
+        borderColor: 'brand.grey.200',
         borderRadius: 8,
         _hover: {
-          borderColor: 'brand.gray.400',
+          borderColor: 'brand.grey.600',
         },
         _focusVisible: {
-          borderColor: 'brand.purple.200',
-          boxShadow: '0 0 0 1px #CF94FF'
+          borderColor: 'brand.purple.600',
+          boxShadow: '0 0 0 1px #8311F9'
         },
       },
     },

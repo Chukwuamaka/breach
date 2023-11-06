@@ -15,14 +15,16 @@ export default function Hero() {
           <Text textStyle='subheading' lineHeight='183.33%' fontWeight='normal'>
             Subscribe to your favourite creators and thinkers. Support work that matters
           </Text>
-          <CustomLink variant="solid" href='/join' mt={8} fontSize={20} fontWeight='bold'
-            h='60px' lineHeight={8} className={space_grotesk.className}
+          <CustomLink variant="solid" href='/join' className={space_grotesk.className} mt={8}
+            customStyles={{fontSize: 20, fontWeight: 'bold', height: 60, lineHeight: 8}}
           >
             Join Breach
           </CustomLink>
         </VStack>
         <Box flex='1'>
-          <Image src={beaver_with_telescope_animation} alt='A beaver looking through a telescope' width={641} height={512} />
+          <Image src={beaver_with_telescope_animation} alt='A beaver looking through a telescope'
+            width={641} height={512} priority
+          />
         </Box>
       </Flex>
     </Box>
