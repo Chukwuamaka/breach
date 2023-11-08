@@ -1,6 +1,6 @@
 import Page from '@/components/Page';
 import { Box, Text, VStack } from '@chakra-ui/react';
-import beaver from "../public/beaver.webp";
+import happy_beaver from "../public/happy_beaver.webp";
 import hurray from "../public/hurray.gif";
 import Image from 'next/image';
 import CustomLink from '@/components/CustomLink';
@@ -11,7 +11,7 @@ export default function WelcomeScreen() {
       <Box as='section'>
         <VStack spacing={7} pb={24} className='responsive_container'>
           <Box pos='relative'>
-            <Image src={beaver} alt='A happy beaver' width={270} height={270} priority />
+            <Image src={happy_beaver} alt='A happy beaver' width={270} height={270} priority />
             <Box pos='absolute' top='-40%' left='-40%' w='max-content'>
               <Image src={hurray} alt='' width={500} height={500} />
             </Box>
