@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} toastOptions={{defaultOptions: { isClosable: true }}}>
       <Component {...pageProps} />
     </ChakraProvider>
   )
