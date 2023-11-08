@@ -13,6 +13,12 @@ const buttonTheme = {
       bg: 'brand.purple.600',
       _hover: {
         bg: 'brand.purple.700'
+      },
+      _loading: {
+        bg: 'brand.grey.300'
+      },
+      _disabled: {
+        bg: 'brand.grey.300'
       }
     }
   },
