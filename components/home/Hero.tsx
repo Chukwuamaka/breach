@@ -15,7 +15,7 @@ export default function Hero() {
           <Text textStyle='subheading' lineHeight='183.33%' fontWeight='normal'>
             Subscribe to your favourite creators and thinkers. Support work that matters
           </Text>
-          <CustomLink variant="solid" href='/signup' className={space_grotesk.className} mt={8}
+          <CustomLink variant="solid" href='/register' className={space_grotesk.className} mt={8}
             customStyles={{fontSize: 20, fontWeight: 'bold', height: 60, lineHeight: 8}}
           >
             Join Breach
