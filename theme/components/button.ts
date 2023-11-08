@@ -8,6 +8,13 @@ const buttonTheme = {
       color: 'brand.grey.900',
       borderColor: 'brand.grey.300',
     },
+    solid: {
+      color: 'white',
+      bg: 'brand.purple.600',
+      _hover: {
+        bg: 'brand.purple.700'
+      }
+    }
   },
   sizes: {
     md: {
@@ -18,9 +25,6 @@ const buttonTheme = {
       fontSize: '0.875rem',
       px: 4,
     }
-  },
-  defaultProps: {
-    colorScheme: 'brand.purple',
   },
 }
 
