@@ -5,7 +5,7 @@ import CustomLink from '@/components/CustomLink';
 import { space_grotesk } from '@/fonts';
 import AuthForm from '@/components/AuthForm';
 
-export default function Signup() {
+export default function Register() {
   return (
     <Page title='Create a Breach Account' withNavbar={true}>
       <Box as='section'>
