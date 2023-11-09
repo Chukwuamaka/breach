@@ -9,7 +9,7 @@ export default function useWebSocket() {
   const [events, setEvents] = useState<SocketEvent[]>([]);
   const [socket, setSocket] = useState<Socket | null>(null);
   const { user } = useUser();
-  const socketUrl = `${process.env.NEXT_PUBLIC_BREACH_SOCKET_SERVER_URL}eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsImVtYWlsIjoiYWFAZy5jb20iLCJpYXQiOjE2OTk0NTEyMTIsImV4cCI6MTY5OTUzNzYxMn0.Iqx6KsUfcmjtggcvXz4EcALfCbuAKhW0I-0OFaXlYWY`
+  const socketUrl = `wss://frontend-test-api.mvm-tech.xyz/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsImVtYWlsIjoiYWFAZy5jb20iLCJpYXQiOjE2OTk0NTEyMTIsImV4cCI6MTY5OTUzNzYxMn0.Iqx6KsUfcmjtggcvXz4EcALfCbuAKhW0I-0OFaXlYWY`
 
   useEffect(() => {
     let newSocket: Socket;
