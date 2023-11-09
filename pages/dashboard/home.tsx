@@ -6,6 +6,7 @@ import { space_grotesk } from "@/fonts";
 import ArticleSection from "@/components/articles/ArticleSection";
 import { streams } from "@/data";
 import StreamSummary from "@/components/dashboard/StreamSummary";
+import useWebSocket from "@/hooks/useWebSocket";
 
 function TopPick() {
   return (
@@ -24,6 +25,7 @@ function TopPick() {
 }
 
 export default function DashboardHome() {
+  const { events } = useWebSocket();
   return (
     <Dashboard>
       <Flex maxH='100vh' overflowY='auto'>
