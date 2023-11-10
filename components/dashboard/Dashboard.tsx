@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Icon, Link, Spinner, StackProps, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Icon, Link, StackProps, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import breach_logo from "../../public/breach_logo.svg";
 import Pencil from "../icons/PencilIcon";
@@ -9,6 +9,7 @@ import MessageTextIcon from "../icons/MessageTextIcon";
 import GridIcon from "../icons/GridIcon";
 import { PropsWithChildren } from "react";
 import useUser from "@/hooks/useUser";
+import Loading from "../Loading";
 
 const sidebarItems = [
   { title: 'Home', route: '/dashboard/home', icon: HomeIcon },
@@ -50,9 +51,10 @@ export default function Dashboard({ children, ...props }: PropsWithChildren<Stac
         {user ?
           children
           :
-          <Flex h='100dvh' justify='center' align='center'>
-            <Spinner color='brand.purple.600' size='xl' />
-          </Flex>
+          <Loading size='xl' containerProps={{
+              display: 'flex', h: '100dvh', justifyContent: 'center', alignItems: 'center'
+            }}
+          />
         }
       </Box>
     </HStack>

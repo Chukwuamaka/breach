@@ -1,8 +1,9 @@
-import { Box, Spinner, Text, VStack, useToast } from "@chakra-ui/react";
+import { Text, VStack, useToast } from "@chakra-ui/react";
 import ArticleSummary from "./ArticleSummary";
 import useSWR from "swr";
 import { fetchData } from "@/services/fetch.service";
 import { Category } from "@/pages";
+import Loading from "../Loading";
 
 export interface Article {
   id: number;
@@ -49,9 +50,7 @@ export default function ArticleList({ category }: { category?: Category }) {
 
   if (isLoading) {
     return (
-      <Box>
-        <Spinner color='brand.purple.600' size='lg' />
-      </Box>
+      <Loading />
     )
   }
 
