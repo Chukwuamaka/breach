@@ -4,7 +4,6 @@ import top_pick from "../../public/top_pick.webp";
 import { Box, Flex, StackDivider, Text, VStack } from "@chakra-ui/react";
 import { space_grotesk } from "@/fonts";
 import ArticleSection from "@/components/articles/ArticleSection";
-import { streams } from "@/data";
 import StreamSummary from "@/components/dashboard/StreamSummary";
 import useWebSocket from "@/hooks/useWebSocket";
 
@@ -48,9 +47,13 @@ export default function DashboardHome() {
             </Text>
           </Box>
           <VStack spacing='33px'>
-            {streams.map((stream, index) => (
-              <StreamSummary key={stream.published_date+index} {...stream} />
-            ))}
+            {events.length === 0 ?
+              <Text textStyle='md_text'>There are no streams at the moment.</Text>
+              :
+              events.map(event => (
+                <StreamSummary key={event.id} {...event} />
+              ))
+            }
           </VStack>
         </VStack>
       </Flex>
