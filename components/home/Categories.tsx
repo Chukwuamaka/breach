@@ -1,8 +1,9 @@
-import { Box, BoxProps, HStack, Spinner, Text, useToast } from "@chakra-ui/react";
+import { Box, BoxProps, HStack, Text, useToast } from "@chakra-ui/react";
 import Tag from "../Tag";
 import useSWR from "swr";
 import { fetchData } from "@/services/fetch.service";
 import { Category } from "@/pages";
+import Loading from "../Loading";
 
 export interface CategoryData {
   id: number;
@@ -41,19 +42,17 @@ export default function Categories({selectedCategory, saveCategory, ...props}: C
           })
         :
         isLoading ?
-          <Box textAlign='center' mt={8}>
-            <Spinner color='purple.600' size='lg' />
-          </Box>
+          <Loading containerProps={{textAlign: 'center', mt: 8}} />
         :
-        <HStack spacing={5} mt={3.5} flexWrap='wrap'>
-          {(categories as CategoryData[]).map(({id, name, icon}) => (
-            <Tag key={name+id} id={`${id}`} isSelected={id === +selectedCategory}
-              handleSelect={handleSelect} leftIcon={<Text>{icon}</Text>} iconSpacing={2}
-            >
-              {name}
-            </Tag>
-          ))}
-        </HStack>
+          <HStack spacing={5} mt={3.5} flexWrap='wrap'>
+            {(categories as CategoryData[]).map(({id, name, icon}) => (
+              <Tag key={name+id} id={`${id}`} isSelected={id === +selectedCategory}
+                handleSelect={handleSelect} leftIcon={<Text>{icon}</Text>} iconSpacing={2}
+              >
+                {name}
+              </Tag>
+            ))}
+          </HStack>
       }
     </Box>
   )

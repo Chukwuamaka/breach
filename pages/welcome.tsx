@@ -4,10 +4,28 @@ import happy_beaver from "../public/happy_beaver.webp";
 import hurray from "../public/hurray.gif";
 import Image from 'next/image';
 import CustomLink from '@/components/CustomLink';
+import useUser from '@/hooks/useUser';
+import Loading from '@/components/Loading';
 
 export default function WelcomeScreen() {
+  const { user } = useUser();
+
+  if (!user) {
+    return (
+      <Page title='Welcome to Breach' withNavbar={true}>
+        <Box as='section'>
+          <Box pt={6} pb='60px' className='responsive_container'>
+            <Loading size='xl' containerProps={{
+                display: 'flex', h: '50dvh', justifyContent: 'center', alignItems: 'center'
+              }}
+            />
+          </Box>
+        </Box>
+      </Page>
+    )
+  }
   return (
-    <Page title='Create a Breach Account' withNavbar={true}>
+    <Page title='Welcome to Breach' withNavbar={true}>
       <Box as='section'>
         <VStack spacing={7} pb={24} className='responsive_container'>
           <Box pos='relative'>

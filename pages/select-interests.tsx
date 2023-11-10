@@ -1,6 +1,6 @@
 import BackButton from "@/components/BackButton";
 import Page from "@/components/Page";
-import { Box, Button, HStack, Spinner, Text, VStack, useToast } from "@chakra-ui/react";
+import { Box, Button, HStack, Text, VStack, useToast } from "@chakra-ui/react";
 import Image from "next/image";
 import beaver from "../public/beaver.webp";
 import Tag from "@/components/Tag";
@@ -12,6 +12,7 @@ import { useState } from "react";
 import { sendData } from "@/services/send_data.service";
 import useUser from "@/hooks/useUser";
 import { useRouter } from "next/router";
+import Loading from "@/components/Loading";
 
 const fetcher = (args: string) => fetchData(args);
 
@@ -69,6 +70,21 @@ export default function SelectInterests() {
     }
     setLoading(false);
   }
+
+  if (!user) {
+    return (
+      <Page title='Select your interests | Breach' withNavbar={true}>
+        <Box as='section'>
+          <Box pt={6} pb='60px' className='responsive_container'>
+            <Loading size='xl' containerProps={{
+                display: 'flex', h: '50dvh', justifyContent: 'center', alignItems: 'center'
+              }}
+            />
+          </Box>
+        </Box>
+      </Page>
+    )
+  }
   
   return (
     <Page title='Select your interests | Breach' withNavbar={true}>
@@ -91,10 +107,8 @@ export default function SelectInterests() {
             {error ?
               handleError('fetch_categories_toast', 'Could not fetch categories', "Please check your internet connection or try again later.")
               :
-              isLoading ?
-                <Box textAlign='center' mt={8}>
-                  <Spinner color='purple.600' size='lg' />
-                </Box>
+            isLoading ?
+              <Loading containerProps={{textAlign: 'center', mt: 8}} />
               :
               <HStack spacing={5} justify='center' flexWrap='wrap'>
                 {(categories as CategoryData[]).map(({id, name, icon}) => (
